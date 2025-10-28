@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港人工智能國際電影節協會 - 專才計劃商業計劃書 | HKAIIFF Business Plan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #3498db;
+            --secondary: #8e44ad;
+            --accent: #00ff9d;
+            --dark: #0a0a0a;
+            --card: rgba(26, 32, 44, 0.85);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', 'Noto Sans TC', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(52,152,219,0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(142,68,173,0.1) 0%, transparent 20%);
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,255,157,0.1);
+            padding: 15px 0;
+        }
+        
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .btn-lang {
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-lang:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52,152,219,0.4);
+        }
+        
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            color: var(--accent);
+            margin: 30px 0 15px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .stat {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0,255,157,0.2);
+        }
+        
+        .stat-num {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(0,255,157,0.5);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 8px;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section:nth-child(even) {
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+        }
+        
+        .card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            border-color: rgba(0,255,157,0.3);
+            box-shadow: 0 10px 25px rgba(0,255,157,0.15);
+        }
+        
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(26,32,44,0.6);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 25px 0;
+        }
+        
+        th {
+            background: linear-gradient(135deg, rgba(52,152,219,0.3), rgba(142,68,173,0.3));
+            color: var(--accent);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        tr:hover {
+            background: rgba(0,255,157,0.05);
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, rgba(52,152,219,0.1), rgba(142,68,173,0.1));
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .platform {
+            background: linear-gradient(135deg, rgba(52,152,219,0.15), rgba(142,68,173,0.15));
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,255,157,0.2);
+            transition: all 0.3s;
+        }
+        
+        .platform:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        
+        .icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0,255,157,0.6);
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+        
+        .timeline:last-child::after {
+            display: none;
+        }
+        
+        .chart {
+            height: 400px;
+            margin: 30px 0;
+            background: rgba(26,32,44,0.5);
+            padding: 20px;
+            border-radius: 12px;
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        .scroll-top.show {
+            display: flex;
+        }
+        
+        .scroll-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        footer {
+            background: rgba(0,0,0,0.8);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 50px 0 25px;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .section { padding: 40px 0; }
+            .card { padding: 20px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .chart { height: 300px; }
+            table { font-size: 0.85rem; }
+            th, td { padding: 10px 8px; }
+        }
+        
+        @media print {
+            body { background: white; color: black; }
+            .navbar, .scroll-top { display: none; }
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        strong {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-flex">
+                <div class="logo">HKAIIFF</div>
+                <button class="btn-lang" onclick="toggleLang()">
+                    <i class="fas fa-language"></i>
+                    <span id="langBtn">Switch to 中文</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1 class="lang" data-en="Hong Kong AI International Film Festival" data-zh="香港人工智能國際電影節協會">Hong Kong AI International Film Festival</h1>
+            <h2 style="color: rgba(255,255,255,0.9);" class="lang" data-en="Quality Migrant Admission Scheme - Business Plan" data-zh="專才計劃申請 - 商業計劃書">Quality Migrant Admission Scheme - Business Plan</h2>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-num">$300M</div>
+                    <div class="stat-label lang" data-en="5-Year Target" data-zh="五年目標">5-Year Target</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">150+</div>
+                    <div class="stat-label lang" data-en="Jobs Created" data-zh="創造就業">Jobs Created</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">6</div>
+                    <div class="stat-label lang" data-en="Platforms" data-zh="核心平台">Platforms</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">Global</div>
+                    <div class="stat-label lang" data-en="Market" data-zh="全球市場">Market</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 目錄 -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="Table of Contents" data-zh="目錄">Table of Contents</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <ol>
+                        <li><a href="#s1" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Executive Summary" data-zh="執行摘要">Executive Summary</span></a></li>
+                        <li><a href="#s2" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Company Overview" data-zh="公司概況">Company Overview</span></a></li>
+                        <li><a href="#s3" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Applicant Background" data-zh="申請人背景">Applicant Background</span></a></li>
+                        <li><a href="#s4" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Project Overview" data-zh="項目概述">Project Overview</span></a></li>
+                        <li><a href="#s5" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Business Model" data-zh="業務模式">Business Model</span></a></li>
+                        <li><a href="#s6" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Hong Kong Advantages" data-zh="香港優勢">Hong Kong Advantages</span></a></li>
+                    </ol>
+                </div>
+                <div class="card">
+                    <ol start="7">
+                        <li><a href="#s7" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Market Analysis" data-zh="市場分析">Market Analysis</span></a></li>
+                        <li><a href="#s8" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Development Plan" data-zh="發展規劃">Development Plan</span></a></li>
+                        <li><a href="#s9" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Organization" data-zh="組織架構">Organization</span></a></li>
+                        <li><a href="#s10" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Financial Projections" data-zh="財務預測">Financial Projections</span></a></li>
+                        <li><a href="#s11" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Risk Assessment" data-zh="風險評估">Risk Assessment</span></a></li>
+                        <li><a href="#s12" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Social Contribution" data-zh="社會貢獻">Social Contribution</span></a></li>
+                        <li><a href="#s13" style="color: var(--primary); text-decoration: none;"><span class="lang" data-en="Conclusion" data-zh="結論">Conclusion</span></a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第一章:執行摘要 -->
+    <div id="s1" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="1. Executive Summary" data-zh="一、執行摘要">1. Executive Summary</h2>
+            
+            <div class="card">
+                <p class="lang" data-en="Hong Kong AI International Film Festival Limited (Registration No: 77536113) is an innovative enterprise registered in Hong Kong on December 31, 2024, dedicated to building the world's first AI-native film and television content ecosystem." data-zh="香港人工智能國際電影節協會有限公司(註冊編號:77536113)於2024年12月31日在香港註冊成立,致力於打造全球首個AI原生影視內容生態系統。">Hong Kong AI International Film Festival Limited (Registration No: 77536113) is an innovative enterprise registered in Hong Kong on December 31, 2024, dedicated to building the world's first AI-native film and television content ecosystem.</p>
+                
+                <p class="lang" data-en="The company operates six core platforms forming a complete industrial value chain: HKAIIFF Film Festival, AIF.Academy Education Platform, AIF.Market Trading Platform, AIF.Center Submission Center, 404.world Virtual Platform, and StarOS Digital Management Platform." data-zh="公司運營六大核心平台,形成完整產業價值鏈:香港AI國際電影節(HKAIIFF)、AI電影學院(AIF.Academy)、AI電影市場(AIF.Market)、征片中心(AIF.Center)、虛擬世界平台(404.world)及數字經紀平台(StarOS)。">The company operates six core platforms forming a complete industrial value chain: HKAIIFF Film Festival, AIF.Academy Education Platform, AIF.Market Trading Platform, AIF.Center Submission Center, 404.world Virtual Platform, and StarOS Digital Management Platform.</p>
+                
+                <p class="lang" data-en="This project pioneers the integration of AI technology across the entire film industry value chain - from content creation, professional training, market transactions to global distribution. Hong Kong's unique position makes it irreplaceable for this venture's success." data-zh="本項目開創性地將AI技術整合到影視產業全價值鏈 - 從內容創作、專業培訓、市場交易到全球分發。香港的獨特地位使其成為本項目成功不可替代的選擇。">This project pioneers the integration of AI technology across the entire film industry value chain - from content creation, professional training, market transactions to global distribution. Hong Kong's unique position makes it irreplaceable for this venture's success.</p>
+            </div>
+            
+            <div class="highlight">
+                <h3 style="margin-top: 0;" class="lang" data-en="Applicant Track Record" data-zh="申請人業績記錄">Applicant Track Record</h3>
+                <div class="grid grid-3">
+                    <div>
+                        <strong>2004-2010</strong>
+                        <p class="lang" data-en="Alibaba Cloud Regional Manager - Led cloud computing expansion in Zhejiang Province" data-zh="阿里巴巴雲浙江大區經理 - 領導雲計算業務擴展">Alibaba Cloud Regional Manager - Led cloud computing expansion in Zhejiang Province</p>
+                    </div>
+                    <div>
+                        <strong>2010-2021</strong>
+                        <p class="lang" data-en="Founded one of China's earliest cross-border e-commerce platforms" data-zh="創立中國最早的跨境電商平台之一">Founded one of China's earliest cross-border e-commerce platforms</p>
+                    </div>
+                    <div>
+                        <strong>2021-Present</strong>
+                        <p class="lang" data-en="Meta-Power Planet - Shanghai's leading metaverse enterprise, 1B+ media exposures, National-level Digital Economy Platform" data-zh="元力星球 - 上海元宇宙龍頭企業,10億+媒體曝光,國家級數字經濟平台">Meta-Power Planet - Shanghai's leading metaverse enterprise, 1B+ media exposures, National-level Digital Economy Platform</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="lang" data-en="Key Performance Indicators" data-zh="關鍵績效指標">Key Performance Indicators</h3>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="icon" style="margin: 0 auto;"><i class="fas fa-users" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h4 style="text-align: center; margin: 15px 0;" class="lang" data-en="Year 1 Team" data-zh="第一年團隊">Year 1 Team</h4>
+                    <div class="stat-num" style="text-align: center;">10</div>
+                    <p style="text-align: center; color: rgba(255,255,255,0.7);" class="lang" data-en="Professional Staff" data-zh="專業人員">Professional Staff</p>
+                </div>
+                <div class="card">
+                    <div class="icon" style="margin: 0 auto;"><i class="fas fa-chart-line" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h4 style="text-align: center; margin: 15px 0;" class="lang" data-en="Year 3 Revenue" data-zh="第三年營收">Year 3 Revenue</h4>
+                    <div class="stat-num" style="text-align: center;">$80M+</div>
+                    <p style="text-align: center; color: rgba(255,255,255,0.7);" class="lang" data-en="Achieving Profitability" data-zh="實現盈利">Achieving Profitability</p>
+                </div>
+                <div class="card">
+                    <div class="icon" style="margin: 0 auto;"><i class="fas fa-trophy" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h4 style="text-align: center; margin: 15px 0;" class="lang" data-en="Year 5 Scale" data-zh="第五年規模">Year 5 Scale</h4>
+                    <div class="stat-num" style="text-align: center;">150+</div>
+                    <p style="text-align: center; color: rgba(255,255,255,0.7);" class="lang" data-en="Team Members" data-zh="團隊成員">Team Members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二章:公司概況 -->
+    <div id="s2" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="2. Company Overview" data-zh="二、公司概況">2. Company Overview</h2>
+            
+            <div class="card">
+                <h3 class="lang" data-en="2.1 Company Registration" data-zh="2.1 公司註冊信息">2.1 Company Registration</h3>
+                <table>
+                    <tr>
+                        <th class="lang" data-en="Item" data-zh="項目">Item</th>
+                        <th class="lang" data-en="Details" data-zh="詳情">Details</th>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Company Name (EN)" data-zh="英文名稱">Company Name (EN)</strong></td>
+                        <td>Hong Kong AI International Film Festival Limited</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Company Name (ZH)" data-zh="中文名稱">Company Name (ZH)</strong></td>
+                        <td>香港人工智能國際電影節協會有限公司</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Registration No." data-zh="註冊編號">Registration No.</strong></td>
+                        <td>77536113</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Date" data-zh="註冊日期">Date</strong></td>
+                        <td>December 31, 2024</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Type" data-zh="公司類型">Type</strong></td>
+                        <td class="lang" data-en="Limited Company" data-zh="有限公司">Limited Company</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="2.2 Development Timeline" data-zh="2.2 發展歷程">2.2 Development Timeline</h3>
+                <div class="timeline">
+                    <h4 style="color: var(--accent); margin-bottom: 10px;">December 2021</h4>
+                    <p class="lang" data-en="Founded Meta-Power Planet AI & Blockchain platform in Shanghai, establishing it as a leading metaverse enterprise" data-zh="在上海創立元力星球AI與區塊鏈平台,成為領先的元宇宙企業">Founded Meta-Power Planet AI & Blockchain platform in Shanghai, establishing it as a leading metaverse enterprise</p>
+                </div>
+                <div class="timeline">
+                    <h4 style="color: var(--accent); margin-bottom: 10px;">2022-2024</h4>
+                    <p class="lang" data-en="Achieved 100+ mainstream media coverage with 1B+ exposures. Recognized as National Cultural Export Base Platform Enterprise and National-level Digital Economy Project Operating Platform" data-zh="獲得100+主流媒體報導,累計10億+曝光。被認定為國家文化出口基地平台企業、國家級數字經濟項目運營平台">Achieved 100+ mainstream media coverage with 1B+ exposures. Recognized as National Cultural Export Base Platform Enterprise and National-level Digital Economy Project Operating Platform</p>
+                </div>
+                <div class="timeline">
+                    <h4 style="color: var(--accent); margin-bottom: 10px;">December 31, 2024</h4>
+                    <p class="lang" data-en="Officially registered Hong Kong AI International Film Festival Limited in Hong Kong, marking full implementation phase" data-zh="正式在香港註冊成立香港人工智能國際電影節協會有限公司,標誌項目進入全面實施階段">Officially registered Hong Kong AI International Film Festival Limited in Hong Kong, marking full implementation phase</p>
+                </div>
+                <div class="timeline">
+                    <h4 style="color: var(--accent); margin-bottom: 10px;">2025-Present</h4>
+                    <p class="lang" data-en="Core system architecture completed. AI Film Academy system successfully developed in Shanghai and entering testing phase" data-zh="完成核心系統架構開發。AI電影學院系統在上海成功開發並進入測試階段">Core system architecture completed. AI Film Academy system successfully developed in Shanghai and entering testing phase</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="2.3 Six Core Business Platforms" data-zh="2.3 六大核心業務平台">2.3 Six Core Business Platforms</h3>
+                <div class="grid grid-3">
+                    <div class="platform">
+                        <div class="icon"><i class="fas fa-film" style="font-size: 1.5rem; color: white;"></i></div>
+                        <h4><strong>HKAIIFF</strong></h4>
+                        <p class="lang" data-en="World's first international film festival dedicated to AI-native content" data-zh="全球首個專注AI原生內容的國際電影節">World's first international film festival dedicated to AI-native content</p>
+                    </div>
+                    <div class="platform">
+                        <div class="icon"><i class="fas fa-graduation-cap" style="font-size: 1.5rem; color: white;"></i></div>
+                        <h4><strong>AIF.Academy</strong></h4>
+                        <p class="lang" data-en="Systematic AI filmmaking education platform" data-zh="系統化AI影視教育平台">Systematic AI filmmaking education platform</p>
+                    </div>
+                    <div class="platform">
+                        <div class="icon"><i class="fas fa-handshake" style="font-size: 1.5rem; color: white;"></i></div>
+                        <h4><strong>AIF.Market</strong></h4>
+                        <p class="lang" data-en="Investment & trading platform connecting creators with investors" data-zh="連接創作者與投資人的投資交易平台">Investment & trading platform connecting creators with investors</p>
+                    </div>
+                    <div class="platform">
+                        <div class="icon"><i class="fas fa-paper-plane" style="font-size: 1.5rem; color: white;"></i></div>
+                        <h4><strong>AIF.Center</strong></h4>
+                        <p class="lang" data-en="Global film submission center with comprehensive services" data-zh="全球征片中心,提供全面服務">Global film submission center with comprehensive services</p>
+                    </div>
+                    <div class="platform">
+                        <div class="icon"><i class="fas fa-globe" style="font-size: 1.5rem; color: white;"></i></div>
+                        <h4><strong>404.world</strong></h4>
+                        <p class="lang" data-en="Immersive virtual world platform for AI film exhibitions" data-zh="AI影視展映沉浸式虛擬世界平台">Immersive virtual world platform for AI film exhibitions</p>
+                    </div>
+                    <div class="platform">
+                        <div class="icon"><i class="fas fa-star" style="font-size: 1.5rem; color: white;"></i></div>
+                        <h4><strong>StarOS</strong></h4>
+                        <p class="lang" data-en="Digital talent management platform for AI-era creators" data-zh="AI時代的數字經紀平台">Digital talent management platform for AI-era creators</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第三章:申請人背景 -->
+    <div id="s3" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="3. Applicant Background & Qualifications" data-zh="三、申請人背景與資質">3. Applicant Background & Qualifications</h2>
+            
+            <div class="card">
+                <h3 class="lang" data-en="3.1 Professional Experience" data-zh="3.1 職業經歷">3.1 Professional Experience</h3>
+                <p class="lang" data-en="With over 20 years of experience in internet and technology sectors, the applicant has progressed through three distinct career phases:" data-zh="擁有超過20年互聯網和科技行業經驗,申請人經歷了三個不同職業階段:">With over 20 years of experience in internet and technology sectors, the applicant has progressed through three distinct career phases:</p>
+                
+                <div style="border-left: 4px solid var(--primary); padding-left: 20px; margin: 20px 0;">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;"><strong class="lang" data-en="Phase 1: Corporate Leadership (2004-2010)" data-zh="第一階段:企業領導(2004-2010)">Phase 1: Corporate Leadership (2004-2010)</strong></h4>
+                    <h5 style="color: var(--accent); margin-bottom: 10px;" class="lang" data-en="Alibaba Cloud - Regional Manager, Zhejiang Province" data-zh="阿里巴巴雲 - 浙江大區經理">Alibaba Cloud - Regional Manager, Zhejiang Province</h5>
+                    <ul>
+                        <li class="lang" data-en="Led regional cloud computing business development and operations" data-zh="領導區域雲計算業務開發和運營">Led regional cloud computing business development and operations</li>
+                        <li class="lang" data-en="Built comprehensive sales systems and expanded market share" data-zh="建立完善的銷售體系並擴大市場份額">Built comprehensive sales systems and expanded market share</li>
+                        <li class="lang" data-en="Managed large-scale enterprise clients and cross-functional teams" data-zh="管理大型企業客戶和跨職能團隊">Managed large-scale enterprise clients and cross-functional teams</li>
+                        <li class="lang" data-en="Gained deep expertise in cloud computing and internet technology" data-zh="獲得雲計算和互聯網技術的深厚專業知識">Gained deep expertise in cloud computing and internet technology</li>
+                    </ul>
+                </div>
+                
+                <div style="border-left: 4px solid var(--secondary); padding-left: 20px; margin: 20px 0;">
+                    <h4 style="color: var(--secondary); margin-bottom: 10px;"><strong class="lang" data-en="Phase 2: Entrepreneurial Foundation (2010-2021)" data-zh="第二階段:創業基礎(2010-2021)">Phase 2: Entrepreneurial Foundation (2010-2021)</strong></h4>
+                    <h5 style="color: var(--accent); margin-bottom: 10px;" class="lang" data-en="Founder - Cross-Border E-commerce Platform" data-zh="創始人 - 跨境電商平台">Founder - Cross-Border E-commerce Platform</h5>
+                    <ul>
+                        <li class="lang" data-en="Founded one of China's earliest cross-border e-commerce platforms" data-zh="創立中國最早的跨境電商平台之一">Founded one of China's earliest cross-border e-commerce platforms</li>
+                        <li class="lang" data-en="Connected thousands of Chinese suppliers with global buyers" data-zh="連接數千家中國供應商與全球買家">Connected thousands of Chinese suppliers with global buyers</li>
+                        <li class="lang" data-en="Experienced complete entrepreneurial cycle: platform building, team formation, market development, and fundraising" data-zh="經歷完整創業週期:平台建設、團隊組建、市場開發和籌資">Experienced complete entrepreneurial cycle: platform building, team formation, market development, and fundraising</li>
+                        <li class="lang" data-en="Developed strong business judgment and resource integration capabilities" data-zh="培養了強大的商業判斷力和資源整合能力">Developed strong business judgment and resource integration capabilities</li>
+                    </ul>
+                </div>
+                
+                <div style="border-left: 4px solid var(--accent); padding-left: 20px; margin: 20px 0;">
+                    <h4 style="color: var(--accent); margin-bottom: 10px;"><strong class="lang" data-en="Phase 3: AI & Metaverse Leadership (2021-Present)" data-zh="第三階段:AI與元宇宙領導(2021-至今)">Phase 3: AI & Metaverse Leadership (2021-Present)</strong></h4>
+                    <h5 style="color: var(--accent); margin-bottom: 10px;" class="lang" data-en="Founder & CEO - Meta-Power Planet" data-zh="創始人兼CEO - 元力星球">Founder & CEO - Meta-Power Planet</h5>
+                    <div class="highlight">
+                        <p><strong class="lang" data-en="Major Achievements:" data-zh="主要成就:">Major Achievements:</strong></p>
+                        <ul>
+                            <li><strong class="lang" data-en="Shanghai's Leading Metaverse Enterprise" data-zh="上海元宇宙龍頭企業">Shanghai's Leading Metaverse Enterprise</strong> - <span class="lang" data-en="Recognized as top-tier digital economy leader" data-zh="被認定為頂級數字經濟領導者">Recognized as top-tier digital economy leader</span></li>
+                            <li><strong class="lang" data-en="1 Billion+ Media Exposures" data-zh="10億+媒體曝光">1 Billion+ Media Exposures</strong> - <span class="lang" data-en="Featured by 100+ mainstream media" data-zh="被100+主流媒體報導">Featured by 100+ mainstream media</span></li>
+                            <li><strong class="lang" data-en="National Cultural Export Base Platform Enterprise" data-zh="國家文化出口基地平台企業">National Cultural Export Base Platform Enterprise</strong></li>
+                            <li><strong class="lang" data-en="National-level Digital Economy Project Operating Platform" data-zh="國家級數字經濟項目運營平台">National-level Digital Economy Project Operating Platform</strong></li>
+                            <li><strong class="lang" data-en="Council Member of Xinhua News Agency Metaverse Industry Alliance" data-zh="新華社元宇宙產業聯盟理事單位">Council Member of Xinhua News Agency Metaverse Industry Alliance</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="3.2 Core Competencies" data-zh="3.2 核心能力">3.2 Core Competencies</h3>
+                <div class="grid grid-3">
+                    <div class="highlight">
+                        <strong><i class="fas fa-brain"></i> <span class="lang" data-en="Technology Expertise" data-zh="技術專長">Technology Expertise</span></strong>
+                        <p class="lang" data-en="Deep understanding of AI, blockchain, and Web3 technologies" data-zh="對AI、區塊鏈和Web3技術的深入理解">Deep understanding of AI, blockchain, and Web3 technologies</p>
+                    </div>
+                    <div class="highlight">
+                        <strong><i class="fas fa-lightbulb"></i> <span class="lang" data-en="Business Innovation" data-zh="商業創新">Business Innovation</span></strong>
+                        <p class="lang" data-en="Proven ability to create innovative business models" data-zh="創新商業模式的成功能力">Proven ability to create innovative business models</p>
+                    </div>
+                    <div class="highlight">
+                        <strong><i class="fas fa-project-diagram"></i> <span class="lang" data-en="Ecosystem Building" data-zh="生態建設">Ecosystem Building</span></strong>
+                        <p class="lang" data-en="Successfully built Meta-Power Planet from ground zero" data-zh="成功從零打造元力星球">Successfully built Meta-Power Planet from ground zero</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第四章:項目概述 -->
+    <div id="s4" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="4. Project Overview & Core Value" data-zh="四、項目概述與核心價值">4. Project Overview & Core Value</h2>
+            
+            <div class="card">
+                <h3 class="lang" data-en="4.1 Industry Background" data-zh="4.1 產業背景">4.1 Industry Background</h3>
+                <p class="lang" data-en="Artificial intelligence is bringing revolutionary changes to the film and television industry. From content creation to post-production, from distribution to viewing experience, AI technology is reshaping every link of the industry chain." data-zh="人工智能正在為影視產業帶來革命性變革。從內容創作到後期製作,從分發到觀影體驗,AI技術正在重塑產業鏈的每個環節。">Artificial intelligence is bringing revolutionary changes to the film and television industry. From content creation to post-production, from distribution to viewing experience, AI technology is reshaping every link of the industry chain.</p>
+                
+                <div class="highlight">
+                    <p><strong class="lang" data-en="AI Film Industry Challenges:" data-zh="AI影視產業挑戰:">AI Film Industry Challenges:</strong></p>
+                    <ul>
+                        <li class="lang" data-en="Lack of unified quality standards and evaluation systems" data-zh="缺乏統一的質量標準和評價體系">Lack of unified quality standards and evaluation systems</li>
+                        <li class="lang" data-en="Severe shortage of professional talent" data-zh="專業人才嚴重短缺">Severe shortage of professional talent</li>
+                        <li class="lang" data-en="Poor investment and financing channels" data-zh="投融資渠道不暢">Poor investment and financing channels</li>
+                        <li class="lang" data-en="Imperfect copyright protection mechanisms" data-zh="版權保護機制不完善">Imperfect copyright protection mechanisms</li>
+                        <li class="lang" data-en="Absence of global distribution networks" data-zh="全球分發網絡缺失">Absence of global distribution networks</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="4.2 Core Mission" data-zh="4.2 核心使命">4.2 Core Mission</h3>
+                <p class="lang" data-en="Our mission is to promote the deep integration of AI technology and film art, establish evaluation standards for AI-native content, and create value for creators and audiences through technology-empowered creativity." data-zh="我們的使命是推動AI技術與影視藝術的深度融合,建立AI原生內容的評價標準,通過技術賦能創意為創作者和觀眾創造價值。">Our mission is to promote the deep integration of AI technology and film art, establish evaluation standards for AI-native content, and create value for creators and audiences through technology-empowered creativity.</p>
+                
+                <ul>
+                    <li class="lang" data-en="Make AI a creative tool and partner" data-zh="讓AI成為創作工具和夥伴">Make AI a creative tool and partner</li>
+                    <li class="lang" data-en="Lower barriers to film creation" data-zh="降低影視創作門檻">Lower barriers to film creation</li>
+                    <li class="lang" data-en="Establish AI content evaluation standards" data-zh="建立AI內容評價標準">Establish AI content evaluation standards</li>
+                    <li class="lang" data-en="Build complete industrial ecosystem" data-zh="構建完整產業生態">Build complete industrial ecosystem</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="4.3 Innovation Highlights" data-zh="4.3 創新亮點">4.3 Innovation Highlights</h3>
+                <div class="grid grid-2">
+                    <div>
+                        <p><strong style="color: var(--accent);">✓</strong> <strong class="lang" data-en="Business Model Innovation" data-zh="業務模式創新">Business Model Innovation</strong></p>
+                        <p class="lang" data-en="World's first complete AI film ecosystem" data-zh="全球首個完整的AI影視生態系統">World's first complete AI film ecosystem</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: var(--accent);">✓</strong> <strong class="lang" data-en="Technology Application" data-zh="技術應用創新">Technology Application</strong></p>
+                        <p class="lang" data-en="AI integrated across entire industry chain" data-zh="AI深度應用於產業全流程">AI integrated across entire industry chain</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: var(--accent);">✓</strong> <strong class="lang" data-en="Commercial Mechanism" data-zh="商業機制創新">Commercial Mechanism</strong></p>
+                        <p class="lang" data-en="Web3 technology for practical applications" data-zh="Web3技術實用性應用">Web3 technology for practical applications</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: var(--accent);">✓</strong> <strong class="lang" data-en="Content Standards" data-zh="內容標準創新">Content Standards</strong></p>
+                        <p class="lang" data-en="Establishing AI film evaluation standards" data-zh="建立AI影視評價標準">Establishing AI film evaluation standards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第五章:業務模式 -->
+    <div id="s5" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="5. Business Model & Revenue Sources" data-zh="五、業務模式與收入來源">5. Business Model & Revenue Sources</h2>
+            
+            <div class="card">
+                <h3 class="lang" data-en="5.1 Ecosystem Business Model" data-zh="5.1 生態化業務模式">5.1 Ecosystem Business Model</h3>
+                <p class="lang" data-en="The company adopts an ecosystem-based business model, achieving diversified revenue sources through coordinated operation of six core platforms." data-zh="公司採用生態化業務模式,通過六大核心平台的協同運營實現多元化收入來源。">The company adopts an ecosystem-based business model, achieving diversified revenue sources through coordinated operation of six core platforms.</p>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="5.2 Revenue Sources by Platform" data-zh="5.2 各平台收入來源">5.2 Revenue Sources by Platform</h3>
+                
+                <div style="border-left: 4px solid #3498db; padding-left: 20px; margin: 25px 0;">
+                    <h4 style="color: #3498db; margin-bottom: 15px;"><strong>HKAIIFF</strong> <span class="lang" data-en="(Film Festival)" data-zh="(電影節)">(Film Festival)</span></h4>
+                    <ul>
+                        <li><strong class="lang" data-en="Submission Fees:" data-zh="參展費:">Submission Fees:</strong> <span class="lang" data-en="$500-$2,000 per entry" data-zh="每部作品$500-$2,000">$500-$2,000 per entry</span></li>
+                        <li><strong class="lang" data-en="Sponsorship Revenue:" data-zh="贊助收入:">Sponsorship Revenue:</strong> <span class="lang" data-en="Corporate partnerships and brand collaborations" data-zh="企業合作和品牌合作">Corporate partnerships and brand collaborations</span></li>
+                        <li><strong class="lang" data-en="Ticketing:" data-zh="門票收入:">Ticketing:</strong> <span class="lang" data-en="Festival attendance and VIP access" data-zh="電影節觀展和VIP入場">Festival attendance and VIP access</span></li>
+                        <li><strong class="lang" data-en="Forum Revenue:" data-zh="論壇收入:">Forum Revenue:</strong> <span class="lang" data-en="Industry summits and professional forums" data-zh="產業峰會和專業論壇">Industry summits and professional forums</span></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong style="color: var(--accent);" class="lang" data-en="Year 1: $1.9M | Year 3: $10.5M" data-zh="第一年:$190萬 | 第三年:$1,050萬">Year 1: $1.9M | Year 3: $10.5M</strong></p>
+                </div>
+                
+                <div style="border-left: 4px solid #8e44ad; padding-left: 20px; margin: 25px 0;">
+                    <h4 style="color: #8e44ad; margin-bottom: 15px;"><strong>AIF.Academy</strong> <span class="lang" data-en="(Education Platform)" data-zh="(教育平台)">(Education Platform)</span></h4>
+                    <ul>
+                        <li><strong class="lang" data-en="Course Training:" data-zh="課程培訓:">Course Training:</strong> <span class="lang" data-en="$1,000-$10,000 per student" data-zh="每名學員$1,000-$10,000">$1,000-$10,000 per student</span></li>
+                        <li><strong class="lang" data-en="Certification Services:" data-zh="認證服務:">Certification Services:</strong> <span class="lang" data-en="Professional certification and examination fees" data-zh="專業認證和考試費用">Professional certification and examination fees</span></li>
+                        <li><strong class="lang" data-en="Enterprise Training:" data-zh="企業培訓:">Enterprise Training:</strong> <span class="lang" data-en="Customized corporate training programs" data-zh="定制化企業培訓項目">Customized corporate training programs</span></li>
+                        <li><strong class="lang" data-en="Content Sales:" data-zh="內容銷售:">Content Sales:</strong> <span class="lang" data-en="Educational materials and tools" data-zh="教材和工具銷售">Educational materials and tools</span></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong style="color: var(--accent);" class="lang" data-en="Year 1: $5M | Year 3: $24.5M" data-zh="第一年:$500萬 | 第三年:$2,450萬">Year 1: $5M | Year 3: $24.5M</strong></p>
+                </div>
+                
+                <div style="border-left: 4px solid #00ff9d; padding-left: 20px; margin: 25px 0;">
+                    <h4 style="color: #00ff9d; margin-bottom: 15px;"><strong>AIF.Market</strong> <span class="lang" data-en="(Trading Platform)" data-zh="(交易平台)">(Trading Platform)</span></h4>
+                    <ul>
+                        <li><strong class="lang" data-en="Financing Fees:" data-zh="融資服務費:">Financing Fees:</strong> <span class="lang" data-en="2-5% of project funding" data-zh="項目融資額的2-5%">2-5% of project funding</span></li>
+                        <li><strong class="lang" data-en="Trading Commission:" data-zh="交易佣金:">Trading Commission:</strong> <span class="lang" data-en="3-5% of copyright transactions" data-zh="版權交易的3-5%">3-5% of copyright transactions</span></li>
+                        <li><strong class="lang" data-en="Premium Memberships:" data-zh="會員服務:">Premium Memberships:</strong> <span class="lang" data-en="Subscription services for creators and investors" data-zh="創作者和投資者的訂閱服務">Subscription services for creators and investors</span></li>
+                        <li><strong class="lang" data-en="Consulting Services:" data-zh="諮詢服務:">Consulting Services:</strong> <span class="lang" data-en="Professional advisory and consulting" data-zh="專業顧問和諮詢">Professional advisory and consulting</span></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong style="color: var(--accent);" class="lang" data-en="Year 1: $1.2M | Year 3: $15M" data-zh="第一年:$119萬 | 第三年:$1,504萬">Year 1: $1.2M | Year 3: $15M</strong></p>
+                </div>
+                
+                <div style="border-left: 4px solid #e74c3c; padding-left: 20px; margin: 25px 0;">
+                    <h4 style="color: #e74c3c; margin-bottom: 15px;"><strong>AIF.Center</strong> <span class="lang" data-en="(Submission Center)" data-zh="(征片中心)">(Submission Center)</span></h4>
+                    <ul>
+                        <li><strong class="lang" data-en="Submission Services:" data-zh="征片服務:">Submission Services:</strong> <span class="lang" data-en="Global submission management fees" data-zh="全球征片管理費用">Global submission management fees</span></li>
+                        <li><strong class="lang" data-en="Copyright Management:" data-zh="版權管理:">Copyright Management:</strong> <span class="lang" data-en="Registration and protection services" data-zh="註冊和保護服務">Registration and protection services</span></li>
+                        <li><strong class="lang" data-en="Localization Services:" data-zh="本地化服務:">Localization Services:</strong> <span class="lang" data-en="Cultural adaptation and translation" data-zh="文化適配和翻譯">Cultural adaptation and translation</span></li>
+                        <li><strong class="lang" data-en="Distribution Support:" data-zh="發行支持:">Distribution Support:</strong> <span class="lang" data-en="Marketing and distribution assistance" data-zh="營銷和發行協助">Marketing and distribution assistance</span></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong style="color: var(--accent);" class="lang" data-en="Year 1: $2.3M | Year 3: $13M" data-zh="第一年:$230萬 | 第三年:$1,300萬">Year 1: $2.3M | Year 3: $13M</strong></p>
+                </div>
+                
+                <div style="border-left: 4px solid #f39c12; padding-left: 20px; margin: 25px 0;">
+                    <h4 style="color: #f39c12; margin-bottom: 15px;"><strong>404.world</strong> <span class="lang" data-en="(Virtual Platform)" data-zh="(虛擬平台)">(Virtual Platform)</span></h4>
+                    <ul>
+                        <li><strong class="lang" data-en="Subscriptions:" data-zh="訂閱:">Subscriptions:</strong> <span class="lang" data-en="$10-$50/month user subscriptions" data-zh="每月$10-$50用戶訂閱">$10-$50/month user subscriptions</span></li>
+                        <li><strong class="lang" data-en="Virtual Spaces:" data-zh="虛擬空間:">Virtual Spaces:</strong> <span class="lang" data-en="Space rental for exhibitions" data-zh="展覽空間租賃">Space rental for exhibitions</span></li>
+                        <li><strong class="lang" data-en="NFT Sales:" data-zh="NFT銷售:">NFT Sales:</strong> <span class="lang" data-en="Virtual goods and collectibles" data-zh="虛擬商品和收藏品">Virtual goods and collectibles</span></li>
+                        <li><strong class="lang" data-en="Advertising:" data-zh="廣告:">Advertising:</strong> <span class="lang" data-en="Sponsorships and brand partnerships" data-zh="贊助和品牌合作">Sponsorships and brand partnerships</span></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong style="color: var(--accent);" class="lang" data-en="Year 1: $2.2M | Year 3: $19.5M" data-zh="第一年:$220萬 | 第三年:$1,950萬">Year 1: $2.2M | Year 3: $19.5M</strong></p>
+                </div>
+                
+                <div style="border-left: 4px solid #9b59b6; padding-left: 20px; margin: 25px 0;">
+                    <h4 style="color: #9b59b6; margin-bottom: 15px;"><strong>StarOS</strong> <span class="lang" data-en="(Digital Management)" data-zh="(數字經紀)">(Digital Management)</span></h4>
+                    <ul>
+                        <li><strong class="lang" data-en="Talent Management:" data-zh="經紀服務:">Talent Management:</strong> <span class="lang" data-en="10-20% commission on deals" data-zh="交易佣金10-20%">10-20% commission on deals</span></li>
+                        <li><strong class="lang" data-en="Brand Partnerships:" data-zh="品牌合作:">Brand Partnerships:</strong> <span class="lang" data-en="Commercial collaboration revenue" data-zh="商業合作收入">Commercial collaboration revenue</span></li>
+                        <li><strong class="lang" data-en="Content Licensing:" data-zh="內容授權:">Content Licensing:</strong> <span class="lang" data-en="IP licensing and usage fees" data-zh="IP授權和使用費">IP licensing and usage fees</span></li>
+                        <li><strong class="lang" data-en="Fan Community:" data-zh="粉絲社群:">Fan Community:</strong> <span class="lang" data-en="Community operations revenue" data-zh="社群運營收入">Community operations revenue</span></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong style="color: var(--accent);" class="lang" data-en="Year 1: $2.1M | Year 3: $20.5M" data-zh="第一年:$210萬 | 第三年:$2,050萬">Year 1: $2.1M | Year 3: $20.5M</strong></p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="5.3 Overall Revenue Growth" data-zh="5.3 整體收入增長">5.3 Overall Revenue Growth</h3>
+                <div class="chart">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第六章:香港優勢 -->
+    <div id="s6" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="6. Hong Kong's Unique Advantages" data-zh="六、香港獨特優勢與必要性">6. Hong Kong's Unique Advantages</h2>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="icon" style="margin-bottom: 15px;"><i class="fas fa-landmark" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h3 class="lang" data-en="Financial Center" data-zh="國際金融中心">Financial Center</h3>
+                    <ul>
+                        <li class="lang" data-en="World-class financial infrastructure" data-zh="世界級金融基礎設施">World-class financial infrastructure</li>
+                        <li class="lang" data-en="Free capital flow and currency exchange" data-zh="資本自由流動和貨幣兌換">Free capital flow and currency exchange</li>
+                        <li class="lang" data-en="Concentration of international investors" data-zh="國際投資機構集中">Concentration of international investors</li>
+                        <li class="lang" data-en="Mature IPO and capital market" data-zh="成熟的IPO和資本市場">Mature IPO and capital market</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="icon" style="margin-bottom: 15px;"><i class="fas fa-shield-alt" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h3 class="lang" data-en="IP Protection" data-zh="知識產權保護">IP Protection</h3>
+                    <ul>
+                        <li class="lang" data-en="Comprehensive IP legal framework" data-zh="完善的知識產權法律體系">Comprehensive IP legal framework</li>
+                        <li class="lang" data-en="Common law system" data-zh="普通法體系">Common law system</li>
+                        <li class="lang" data-en="Efficient dispute resolution" data-zh="高效的爭議解決">Efficient dispute resolution</li>
+                        <li class="lang" data-en="Strong contract enforcement" data-zh="強有力的合同執行">Strong contract enforcement</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="icon" style="margin-bottom: 15px;"><i class="fas fa-users" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h3 class="lang" data-en="International Talent" data-zh="國際化人才">International Talent</h3>
+                    <ul>
+                        <li class="lang" data-en="Large pool of international professionals" data-zh="大量國際專業人才">Large pool of international professionals</li>
+                        <li class="lang" data-en="World-class professional services" data-zh="世界級專業服務">World-class professional services</li>
+                        <li class="lang" data-en="Bilingual workforce" data-zh="雙語工作環境">Bilingual workforce</li>
+                        <li class="lang" data-en="Established film industry ecosystem" data-zh="成熟的影視產業生態">Established film industry ecosystem</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div class="icon" style="margin-bottom: 15px;"><i class="fas fa-bridge" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h3 class="lang" data-en="Cultural Bridge" data-zh="文化橋樑">Cultural Bridge</h3>
+                    <ul>
+                        <li class="lang" data-en="Gateway connecting East and West" data-zh="連接東西方的門戶">Gateway connecting East and West</li>
+                        <li class="lang" data-en="Access to Chinese mainland and global markets" data-zh="進入內地和國際市場">Access to Chinese mainland and global markets</li>
+                        <li class="lang" data-en="Multicultural environment" data-zh="多元文化環境">Multicultural environment</li>
+                        <li class="lang" data-en="International media hub" data-zh="國際媒體樞紐">International media hub</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <h3 class="lang" data-en="Why Hong Kong is Irreplaceable" data-zh="香港不可替代的原因">Why Hong Kong is Irreplaceable</h3>
+                <div class="grid grid-2">
+                    <div>
+                        <p><strong class="lang" data-en="1. Capital Operations" data-zh="1. 資本運作">1. Capital Operations</strong></p>
+                        <p class="lang" data-en="Only Hong Kong provides free capital flow, diverse financing channels, and international capital market access essential for project development." data-zh="只有香港提供資本自由流動、多元融資渠道和國際資本市場接入,這對項目發展至關重要。">Only Hong Kong provides free capital flow, diverse financing channels, and international capital market access essential for project development.</p>
+                    </div>
+                    <div>
+                        <p><strong class="lang" data-en="2. IP Protection" data-zh="2. 知識產權保護">2. IP Protection</strong></p>
+                        <p class="lang" data-en="Hong Kong's common law framework and international recognition provide the legal certainty needed to protect creators and investors." data-zh="香港的普通法體系和國際認可度為創作者和投資人提供法律保障。">Hong Kong's common law framework and international recognition provide the legal certainty needed to protect creators and investors.</p>
+                    </div>
+                    <div>
+                        <p><strong class="lang" data-en="3. International Talent" data-zh="3. 國際人才">3. International Talent</strong></p>
+                        <p class="lang" data-en="Hong Kong's international environment, professional services, and quality of life attract global talent that cannot be easily recruited elsewhere." data-zh="香港的國際化環境、專業服務和生活質量能夠吸引全球人才。">Hong Kong's international environment, professional services, and quality of life attract global talent that cannot be easily recruited elsewhere.</p>
+                    </div>
+                    <div>
+                        <p><strong class="lang" data-en="4. Global Market Access" data-zh="4. 全球市場接入">4. Global Market Access</strong></p>
+                        <p class="lang" data-en="Hong Kong's unique position as a bridge enables seamless operations in both Chinese mainland and international markets." data-zh="香港作為橋樑的獨特地位,使項目能夠在內地和國際市場無縫運作。">Hong Kong's unique position as a bridge enables seamless operations in both Chinese mainland and international markets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第七章:市場分析 -->
+    <div id="s7" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="7. Market Analysis & Competitive Advantage" data-zh="七、市場分析與競爭優勢">7. Market Analysis & Competitive Advantage</h2>
+            
+            <div class="card">
+                <h3 class="lang" data-en="7.1 Global AI Film Market" data-zh="7.1 全球AI影視市場">7.1 Global AI Film Market</h3>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-num">$50B+</div>
+                        <div class="stat-label lang" data-en="Market Size by 2030" data-zh="2030年市場規模">Market Size by 2030</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">45%</div>
+                        <div class="stat-label lang" data-en="Annual Growth Rate" data-zh="年均增長率">Annual Growth Rate</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">100M+</div>
+                        <div class="stat-label lang" data-en="Potential Creators" data-zh="潛在創作者">Potential Creators</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="lang" data-en="Target Market Segments" data-zh="目標市場群體">Target Market Segments</h3>
+                    <ul>
+                        <li><strong class="lang" data-en="AI Filmmakers:" data-zh="AI影視創作者:">AI Filmmakers:</strong> <span class="lang" data-en="Independent creators, studios, production companies" data-zh="獨立創作者、工作室、製作公司">Independent creators, studios, production companies</span></li>
+                        <li><strong class="lang" data-en="Investors:" data-zh="投資人:">Investors:</strong> <span class="lang" data-en="VCs, film funds, angel investors" data-zh="風投、影視基金、天使投資人">VCs, film funds, angel investors</span></li>
+                        <li><strong class="lang" data-en="Students:" data-zh="學員:">Students:</strong> <span class="lang" data-en="Film professionals, tech enthusiasts, entrepreneurs" data-zh="影視從業者、技術愛好者、創業者">Film professionals, tech enthusiasts, entrepreneurs</span></li>
+                        <li><strong class="lang" data-en="Audiences:" data-zh="觀眾:">Audiences:</strong> <span class="lang" data-en="AI content enthusiasts, early adopters" data-zh="AI內容愛好者、早期採用者">AI content enthusiasts, early adopters</span></li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="lang" data-en="Competitive Advantages" data-zh="競爭優勢">Competitive Advantages</h3>
+                    <ul>
+                        <li><i class="fas fa-star" style="color: var(--accent);"></i> <span class="lang" data-en="First-mover advantage in AI film ecosystem" data-zh="AI影視生態系統的先發優勢">First-mover advantage in AI film ecosystem</span></li>
+                        <li><i class="fas fa-star" style="color: var(--accent);"></i> <span class="lang" data-en="Complete value chain integration" data-zh="完整的價值鏈整合">Complete value chain integration</span></li>
+                        <li><i class="fas fa-star" style="color: var(--accent);"></i> <span class="lang" data-en="Hong Kong's unique strategic position" data-zh="香港獨特的戰略位置">Hong Kong's unique strategic position</span></li>
+                        <li><i class="fas fa-star" style="color: var(--accent);"></i> <span class="lang" data-en="Proven track record of team" data-zh="團隊的成功記錄">Proven track record of team</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第八章:發展規劃 -->
+    <div id="s8" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="8. Development Plan & Milestones" data-zh="八、發展規劃與里程碑">8. Development Plan & Milestones</h2>
+            
+            <div class="card">
+                <h3 class="lang" data-en="10-Year Strategic Roadmap" data-zh="十年戰略規劃">10-Year Strategic Roadmap</h3>
+                
+                <div class="timeline">
+                    <h4 style="color: var(--accent); margin-bottom: 10px;" class="lang" data-en="Years 1-3: Foundation & Brand Building" data-zh="第1-3年:基礎建設與品牌塑造">Years 1-3: Foundation & Brand Building</h4>
+                    <ul>
+                        <li class="lang" data-en="Launch all six core platforms" data-zh="啟動六大核心平台">Launch all six core platforms</li>
+                        <li class="lang" data-en="Hold first 3 editions of HKAIIFF" data-zh="舉辦首三屆電影節">Hold first 3 editions of HKAIIFF</li>
+                        <li class="lang" data-en="Build team to 50 members" data-zh="團隊擴展至50人">Build team to 50 members</li>
+                        <li class="lang" data-en="Achieve $80-100M revenue and profitability" data-zh="實現$8,000萬-1億美元營收並盈利">Achieve $80-100M revenue and profitability</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline">
+                    <h4 style="color: var(--accent); margin-bottom: 10px;" class="lang" data-en="Years 4-7: Rapid Expansion" data-zh="第4-7年:快速擴張">Years 4-7: Rapid Expansion</h4>
+                    <ul>
+                        <li class="lang" data-en="Expand to international markets" data-zh="拓展國際市場">Expand to international markets</li>
+                        <li class="lang" data-en="Establish regional offices in key cities" data-zh="在關鍵城市建立區域辦公室">Establish regional offices in key cities</li>
+                        <li class="lang" data-en="Grow team to 150+ members" data-zh="團隊增長至150+人">Grow team to 150+ members</li>
+                        <li class="lang" data-en="Achieve $200-300M revenue" data-zh="實現$2-3億美元營收">Achieve $200-300M revenue</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline">
+                    <h4 style="color: var(--accent); margin-bottom: 10px;" class="lang" data-en="Years 8-10: Industry Leadership & IPO" data-zh="第8-10年:行業領導地位與上市">Years 8-10: Industry Leadership & IPO</h4>
+                    <ul>
+                        <li class="lang" data-en="Become global AI film industry leader" data-zh="成為全球AI影視產業領導者">Become global AI film industry leader</li>
+                        <li class="lang" data-en="Team size 300+ members" data-zh="團隊規模300+人">Team size 300+ members</li>
+                        <li class="lang" data-en="Achieve $500M+ revenue" data-zh="實現$5億+美元營收">Achieve $500M+ revenue</li>
+                        <li class="lang" data-en="Prepare for Hong Kong Stock Exchange IPO" data-zh="準備香港聯交所上市">Prepare for Hong Kong Stock Exchange IPO</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第九章:組織架構 -->
+    <div id="s9" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="9. Organizational Structure & Recruitment" data-zh="九、組織架構與人員招聘">9. Organizational Structure & Recruitment</h2>
+            
+            <div class="card">
+                <h3 class="lang" data-en="Year 1 Recruitment Plan (10 Positions)" data-zh="第一年招聘計劃(10個崗位)">Year 1 Recruitment Plan (10 Positions)</h3>
+                <div class="grid grid-2">
+                    <div class="highlight">
+                        <h4 class="lang" data-en="Management Team (3)" data-zh="管理團隊(3人)">Management Team (3)</h4>
+                        <ul>
+                            <li class="lang" data-en="Chief Operating Officer (COO)" data-zh="首席運營官(COO)">Chief Operating Officer (COO)</li>
+                            <li class="lang" data-en="Chief Technology Officer (CTO)" data-zh="首席技術官(CTO)">Chief Technology Officer (CTO)</li>
+                            <li class="lang" data-en="Chief Marketing Officer (CMO)" data-zh="首席營銷官(CMO)">Chief Marketing Officer (CMO)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight">
+                        <h4 class="lang" data-en="Technical Team (3)" data-zh="技術團隊(3人)">Technical Team (3)</h4>
+                        <ul>
+                            <li class="lang" data-en="Full-Stack Developer" data-zh="全棧開發工程師">Full-Stack Developer</li>
+                            <li class="lang" data-en="AI Engineer" data-zh="AI工程師">AI Engineer</li>
+                            <li class="lang" data-en="DevOps Engineer" data-zh="DevOps工程師">DevOps Engineer</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight">
+                        <h4 class="lang" data-en="Business Team (3)" data-zh="業務團隊(3人)">Business Team (3)</h4>
+                        <ul>
+                            <li class="lang" data-en="Film Festival Director" data-zh="電影節總監">Film Festival Director</li>
+                            <li class="lang" data-en="Education Program Manager" data-zh="教育項目經理">Education Program Manager</li>
+                            <li class="lang" data-en="Business Development Manager" data-zh="商務拓展經理">Business Development Manager</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight">
+                        <h4 class="lang" data-en="Support Team (1)" data-zh="支持團隊(1人)">Support Team (1)</h4>
+                        <ul>
+                            <li class="lang" data-en="Administrative & Finance Manager" data-zh="行政財務經理">Administrative & Finance Manager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="5-Year Team Growth Plan" data-zh="五年團隊擴展計劃">5-Year Team Growth Plan</h3>
+                <table>
+                    <tr>
+                        <th class="lang" data-en="Year" data-zh="年份">Year</th>
+                        <th class="lang" data-en="Team Size" data-zh="團隊規模">Team Size</th>
+                        <th class="lang" data-en="New Hires" data-zh="新增人員">New Hires</th>
+                        <th class="lang" data-en="Key Departments" data-zh="重點部門">Key Departments</th>
+                    </tr>
+                    <tr>
+                        <td class="lang" data-en="Year 1" data-zh="第一年">Year 1</td>
+                        <td>10</td>
+                        <td>10</td>
+                        <td class="lang" data-en="Core Management & Operations" data-zh="核心管理與運營">Core Management & Operations</td>
+                    </tr>
+                    <tr>
+                        <td class="lang" data-en="Year 2" data-zh="第二年">Year 2</td>
+                        <td>30</td>
+                        <td>20</td>
+                        <td class="lang" data-en="Platform Expansion & Content" data-zh="平台擴展與內容">Platform Expansion & Content</td>
+                    </tr>
+                    <tr>
+                        <td class="lang" data-en="Year 3" data-zh="第三年">Year 3</td>
+                        <td>50</td>
+                        <td>20</td>
+                        <td class="lang" data-en="Marketing & International" data-zh="營銷與國際">Marketing & International</td>
+                    </tr>
+                    <tr>
+                        <td class="lang" data-en="Year 4" data-zh="第四年">Year 4</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td class="lang" data-en="Regional Offices" data-zh="區域辦公室">Regional Offices</td>
+                    </tr>
+                    <tr>
+                        <td class="lang" data-en="Year 5" data-zh="第五年">Year 5</td>
+                        <td>150+</td>
+                        <td>50+</td>
+                        <td class="lang" data-en="All Functions" data-zh="全部職能">All Functions</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第十章:財務預測 -->
+    <div id="s10" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="10. Financial Projections & Funding Plan" data-zh="十、財務預測與資金規劃">10. Financial Projections & Funding Plan</h2>
+            
+            <div class="card">
+                <h3 class="lang" data-en="5-Year Financial Forecast" data-zh="五年財務預測">5-Year Financial Forecast</h3>
+                <table>
+                    <tr>
+                        <th class="lang" data-en="Item" data-zh="項目">Item</th>
+                        <th class="lang" data-en="Year 1" data-zh="第一年">Year 1</th>
+                        <th class="lang" data-en="Year 2" data-zh="第二年">Year 2</th>
+                        <th class="lang" data-en="Year 3" data-zh="第三年">Year 3</th>
+                        <th class="lang" data-en="Year 4" data-zh="第四年">Year 4</th>
+                        <th class="lang" data-en="Year 5" data-zh="第五年">Year 5</th>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Total Revenue" data-zh="總收入">Total Revenue</strong></td>
+                        <td>$15-20M</td>
+                        <td>$50-70M</td>
+                        <td>$80-100M</td>
+                        <td>$150-200M</td>
+                        <td>$200-300M</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Operating Costs" data-zh="運營成本">Operating Costs</strong></td>
+                        <td>$23-30M</td>
+                        <td>$52-74M</td>
+                        <td>$65-80M</td>
+                        <td>$120-150M</td>
+                        <td>$150-220M</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Net Profit" data-zh="淨利潤">Net Profit</strong></td>
+                        <td style="color: #e74c3c;">-$8-10M</td>
+                        <td style="color: #e74c3c;">-$2-4M</td>
+                        <td style="color: #00ff9d;">$15-20M</td>
+                        <td style="color: #00ff9d;">$30-50M</td>
+                        <td style="color: #00ff9d;">$50-80M</td>
+                    </tr>
+                    <tr>
+                        <td><strong class="lang" data-en="Profit Margin" data-zh="利潤率">Profit Margin</strong></td>
+                        <td>-50%</td>
+                        <td>-5%</td>
+                        <td>18%</td>
+                        <td>23%</td>
+                        <td>28%</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="lang" data-en="Funding Requirements" data-zh="資金需求">Funding Requirements</h3>
+                    <ul>
+                        <li><strong class="lang" data-en="Seed Round:" data-zh="種子輪:">Seed Round:</strong> <span class="lang" data-en="$3M (Completed)" data-zh="$300萬(已完成)">$3M (Completed)</span></li>
+                        <li><strong class="lang" data-en="Series A:" data-zh="A輪:">Series A:</strong> <span class="lang" data-en="$10M (Q2 2026)" data-zh="$1,000萬(2026年Q2)">$10M (Q2 2026)</span></li>
+                        <li><strong class="lang" data-en="Series B:" data-zh="B輪:">Series B:</strong> <span class="lang" data-en="$30M (2027)" data-zh="$3,000萬(2027年)">$30M (2027)</span></li>
+                        <li><strong class="lang" data-en="Series C:" data-zh="C輪:">Series C:</strong> <span class="lang" data-en="$50M (2029)" data-zh="$5,000萬(2029年)">$50M (2029)</span></li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong class="lang" data-en="Total Funding:" data-zh="總融資額:">Total Funding:</strong> <strong style="color: var(--accent);">$93M</strong></p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="lang" data-en="Fund Allocation" data-zh="資金用途">Fund Allocation</h3>
+                    <ul>
+                        <li><i class="fas fa-circle" style="color: #3498db;"></i> <strong class="lang" data-en="Platform Development: 30%" data-zh="平台開發:30%">Platform Development: 30%</strong></li>
+                        <li><i class="fas fa-circle" style="color: #8e44ad;"></i> <strong class="lang" data-en="Marketing & Branding: 25%" data-zh="營銷推廣:25%">Marketing & Branding: 25%</strong></li>
+                        <li><i class="fas fa-circle" style="color: #00ff9d;"></i> <strong class="lang" data-en="Team Building: 20%" data-zh="團隊建設:20%">Team Building: 20%</strong></li>
+                        <li><i class="fas fa-circle" style="color: #f39c12;"></i> <strong class="lang" data-en="Operations: 15%" data-zh="運營費用:15%">Operations: 15%</strong></li>
+                        <li><i class="fas fa-circle" style="color: #e74c3c;"></i> <strong class="lang" data-en="Reserve Fund: 10%" data-zh="儲備資金:10%">Reserve Fund: 10%</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第十一章:風險評估 -->
+    <div id="s11" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="11. Risk Assessment & Mitigation Strategies" data-zh="十一、風險評估與應對策略">11. Risk Assessment & Mitigation Strategies</h2>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="icon" style="margin-bottom: 15px;"><i class="fas fa-chart-line" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h3 class="lang" data-en="Market Risk" data-zh="市場風險">Market Risk</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;" class="lang" data-en="AI technology evolution and market acceptance uncertainty" data-zh="AI技術演進和市場接受度不確定性">AI technology evolution and market acceptance uncertainty</p>
+                    <p><strong class="lang" data-en="Mitigation:" data-zh="應對策略:">Mitigation:</strong> <span class="lang" data-en="Diversified platform ecosystem, continuous innovation, close market monitoring" data-zh="多元化平台生態、持續創新、密切市場監測">Diversified platform ecosystem, continuous innovation, close market monitoring</span></p>
+                </div>
+                
+                <div class="card">
+                    <div class="icon" style="margin-bottom: 15px;"><i class="fas fa-shield-alt" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h3 class="lang" data-en="Technology Risk" data-zh="技術風險">Technology Risk</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;" class="lang" data-en="Rapid technology changes and platform stability" data-zh="技術快速變化和平台穩定性">Rapid technology changes and platform stability</p>
+                    <p><strong class="lang" data-en="Mitigation:" data-zh="應對策略:">Mitigation:</strong> <span class="lang" data-en="Strong technical team, modular architecture, partnerships with AI companies" data-zh="強大技術團隊、模塊化架構、與AI公司合作">Strong technical team, modular architecture, partnerships with AI companies</span></p>
+                </div>
+                
+                <div class="card">
+                    <div class="icon" style="margin-bottom: 15px;"><i class="fas fa-users" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h3 class="lang" data-en="Competition Risk" data-zh="競爭風險">Competition Risk</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;" class="lang" data-en="Potential competitors entering the market" data-zh="潛在競爭對手進入市場">Potential competitors entering the market</p>
+                    <p><strong class="lang" data-en="Mitigation:" data-zh="應對策略:">Mitigation:</strong> <span class="lang" data-en="First-mover advantage, ecosystem barriers, Hong Kong strategic positioning" data-zh="先發優勢、生態壁壘、香港戰略定位">First-mover advantage, ecosystem barriers, Hong Kong strategic positioning</span></p>
+                </div>
+                
+                <div class="card">
+                    <div class="icon" style="margin-bottom: 15px;"><i class="fas fa-balance-scale" style="font-size: 1.5rem; color: white;"></i></div>
+                    <h3 class="lang" data-en="Regulatory Risk" data-zh="監管風險">Regulatory Risk</h3>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;" class="lang" data-en="Changes in AI and copyright regulations" data-zh="AI和版權法規變化">Changes in AI and copyright regulations</p>
+                    <p><strong class="lang" data-en="Mitigation:" data-zh="應對策略:">Mitigation:</strong> <span class="lang" data-en="Hong Kong's stable legal system, compliance-first approach, legal advisory team" data-zh="香港穩定法律體系、合規優先、法律顧問團隊">Hong Kong's stable legal system, compliance-first approach, legal advisory team</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第十二章:社會貢獻 -->
+    <div id="s12" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="12. Social & Economic Contribution" data-zh="十二、社會經濟貢獻">12. Social & Economic Contribution</h2>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="icon" style="margin: 0 auto 15px;"><i class="fas fa-briefcase" style="font-size: 1.5rem; color: white;"></i></div>
+                    <div class="stat-num">150+</div>
+                    <div class="stat-label lang" data-en="High-Quality Jobs (Year 5)" data-zh="高質量就業(第五年)">High-Quality Jobs (Year 5)</div>
+                </div>
+                <div class="stat">
+                    <div class="icon" style="margin: 0 auto 15px;"><i class="fas fa-graduation-cap" style="font-size: 1.5rem; color: white;"></i></div>
+                    <div class="stat-num">5,000+</div>
+                    <div class="stat-label lang" data-en="Trained Professionals (Year 3)" data-zh="培訓人才(第三年)">Trained Professionals (Year 3)</div>
+                </div>
+                <div class="stat">
+                    <div class="icon" style="margin: 0 auto 15px;"><i class="fas fa-dollar-sign" style="font-size: 1.5rem; color: white;"></i></div>
+                    <div class="stat-num">$300M+</div>
+                    <div class="stat-label lang" data-en="Economic Output (Year 5)" data-zh="經濟產出(第五年)">Economic Output (Year 5)</div>
+                </div>
+                <div class="stat">
+                    <div class="icon" style="margin: 0 auto 15px;"><i class="fas fa-globe-asia" style="font-size: 1.5rem; color: white;"></i></div>
+                    <div class="stat-num">Global</div>
+                    <div class="stat-label lang" data-en="Cultural Influence" data-zh="文化影響力">Cultural Influence</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="lang" data-en="Key Contributions to Hong Kong" data-zh="對香港的關鍵貢獻">Key Contributions to Hong Kong</h3>
+                <div class="grid grid-2">
+                    <div>
+                        <p><strong style="color: var(--accent);">1. <span class="lang" data-en="Economic Development" data-zh="經濟發展">Economic Development</span></strong></p>
+                        <p class="lang" data-en="Creating new AI film industry cluster, attracting international investment, generating tax revenue" data-zh="創建新的AI影視產業集群,吸引國際投資,產生稅收">Creating new AI film industry cluster, attracting international investment, generating tax revenue</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: var(--accent);">2. <span class="lang" data-en="Employment Creation" data-zh="就業創造">Employment Creation</span></strong></p>
+                        <p class="lang" data-en="Providing 150+ high-quality jobs with competitive salaries" data-zh="提供150+個高質量就業崗位,具有競爭力的薪資">Providing 150+ high-quality jobs with competitive salaries</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: var(--accent);">3. <span class="lang" data-en="Talent Development" data-zh="人才培養">Talent Development</span></strong></p>
+                        <p class="lang" data-en="Training thousands of AI film professionals" data-zh="培訓數千名AI影視專業人才">Training thousands of AI film professionals</p>
+                    </div>
+                    <div>
+                        <p><strong style="color: var(--accent);">4. <span class="lang" data-en="International Status" data-zh="國際地位">International Status</span></strong></p>
+                        <p class="lang" data-en="Establishing Hong Kong as global center for AI film industry" data-zh="確立香港作為全球AI影視產業中心">Establishing Hong Kong as global center for AI film industry</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第十三章:結論 -->
+    <div id="s13" class="section">
+        <div class="container">
+            <h2 class="section-title lang" data-en="13. Conclusion" data-zh="十三、結論">13. Conclusion</h2>
+            
+            <div class="card">
+                <p style="font-size: 1.1rem; line-height: 2;" class="lang" data-en="Hong Kong AI International Film Festival Limited represents a unique opportunity at the intersection of artificial intelligence and creative industries. Our comprehensive ecosystem approach, proven leadership team, and strategic positioning in Hong Kong create the foundation for building a global industry leader." data-zh="香港人工智能國際電影節協會有限公司代表了人工智能與創意產業交匯處的獨特機遇。我們全面的生態系統方法、經過驗證的領導團隊以及在香港的戰略定位,為建立全球行業領導者奠定了基礎。">Hong Kong AI International Film Festival Limited represents a unique opportunity at the intersection of artificial intelligence and creative industries. Our comprehensive ecosystem approach, proven leadership team, and strategic positioning in Hong Kong create the foundation for building a global industry leader.</p>
+                
+                <p style="font-size: 1.1rem; line-height: 2;" class="lang" data-en="The applicant's extensive experience from Alibaba Cloud, cross-border e-commerce entrepreneurship, and the successful Meta-Power Planet venture provides the exact expertise needed to execute this ambitious project. The necessity of operating in Hong Kong is clear: only Hong Kong offers the unique combination of capital markets, IP protection, international talent, and cultural bridge positioning essential for success." data-zh="申請人從阿里巴巴雲、跨境電商創業以及成功的元力星球項目中積累的豐富經驗,為執行這一雄心勃勃的項目提供了所需的專業知識。在香港運營的必要性顯而易見:只有香港提供資本市場、知識產權保護、國際人才和文化橋樑定位的獨特組合。">The applicant's extensive experience from Alibaba Cloud, cross-border e-commerce entrepreneurship, and the successful Meta-Power Planet venture provides the exact expertise needed to execute this ambitious project. The necessity of operating in Hong Kong is clear: only Hong Kong offers the unique combination of capital markets, IP protection, international talent, and cultural bridge positioning essential for success.</p>
+                
+                <p style="font-size: 1.1rem; line-height: 2;" class="lang" data-en="Our financial projections demonstrate a clear path to profitability by Year 3, with revenue reaching $80-100 million and creating 50 high-quality jobs. By Year 5, we project $200-300 million in revenue, 150+ team members, and substantial economic contribution to Hong Kong." data-zh="我們的財務預測顯示,到第三年將有清晰的盈利路徑,收入達到8,000萬-1億美元,創造50個高質量就業崗位。到第五年,我們預計收入達到2-3億美元,150+團隊成員,為香港做出重大經濟貢獻。">Our financial projections demonstrate a clear path to profitability by Year 3, with revenue reaching $80-100 million and creating 50 high-quality jobs. By Year 5, we project $200-300 million in revenue, 150+ team members, and substantial economic contribution to Hong Kong.</p>
+            </div>
+            
+            <div class="highlight">
+                <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 25px;" class="lang" data-en="Why This Application Matters" data-zh="本申請的重要性">Why This Application Matters</h3>
+                <p style="text-align: center; margin-bottom: 20px;" class="lang" data-en="The applicant's physical presence in Hong Kong is essential for:" data-zh="申請人在香港的實際駐留對以下方面至關重要:">The applicant's physical presence in Hong Kong is essential for:</p>
+                <div class="grid grid-2">
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> <span class="lang" data-en="Securing office space and establishing operations" data-zh="租用辦公場所並建立運營">Securing office space and establishing operations</span></li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> <span class="lang" data-en="Recruiting and managing international team" data-zh="招募和管理國際團隊">Recruiting and managing international team</span></li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> <span class="lang" data-en="Opening corporate bank accounts" data-zh="開設企業銀行賬戶">Opening corporate bank accounts</span></li>
+                    </ul>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> <span class="lang" data-en="Conducting business negotiations" data-zh="開展商務談判">Conducting business negotiations</span></li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> <span class="lang" data-en="Building relationships with investors" data-zh="與投資人建立關係">Building relationships with investors</span></li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> <span class="lang" data-en="Representing company at industry events" data-zh="在行業活動中代表公司">Representing company at industry events</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, rgba(52,152,219,0.1), rgba(142,68,173,0.1)); border-radius: 16px; margin-top: 30px;">
+                <p style="font-size: 1.5rem; font-weight: 700; background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 15px;" class="lang" data-en="We respectfully request approval of this Quality Migrant Admission Scheme application." data-zh="我們誠摯請求批准本專才計劃申請。">We respectfully request approval of this Quality Migrant Admission Scheme application.</p>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8);" class="lang" data-en="Together, we will build Hong Kong's leadership in the AI film industry and contribute significantly to its economic and cultural development." data-zh="共同建設香港在AI影視產業的領導地位,為香港的經濟和文化發展做出重大貢獻。">Together, we will build Hong Kong's leadership in the AI film industry and contribute significantly to its economic and cultural development.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer>
+        <div class="container">
+            <div class="grid grid-3">
+                <div>
+                    <div class="logo" style="margin-bottom: 15px;">HKAIIFF</div>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;" class="lang" data-en="Hong Kong AI International Film Festival Limited" data-zh="香港人工智能國際電影節協會有限公司">Hong Kong AI International Film Festival Limited</p>
+                    <p style="color: rgba(255,255,255,0.4); font-size: 0.85rem; margin-top: 10px;" class="lang" data-en="Registration No: 77536113" data-zh="註冊編號:77536113">Registration No: 77536113</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 15px; color: var(--accent);" class="lang" data-en="Contact" data-zh="聯繫方式">Contact</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;"><i class="fas fa-envelope" style="margin-right: 8px;"></i>info@hkaiiff.com</p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-top: 8px;"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i><span class="lang" data-en="Hong Kong" data-zh="香港">Hong Kong</span></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 15px; color: var(--accent);" class="lang" data-en="Quick Links" data-zh="快速鏈接">Quick Links</h4>
+                    <p style="margin-bottom: 8px;"><a href="#s1" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s;" class="lang" data-en="Executive Summary" data-zh="執行摘要">Executive Summary</a></p>
+                    <p style="margin-bottom: 8px;"><a href="#s10" style="color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.3s;" class="lang" data-en="Financial Projections" data-zh="財務預測">Financial Projections</a></p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 25px; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.85rem;">
+                <p class="lang" data-en="© 2025 Hong Kong AI International Film Festival Limited. All rights reserved." data-zh="© 2025 香港人工智能國際電影節協會有限公司。保留所有權利。">© 2025 Hong Kong AI International Film Festival Limited. All rights reserved.</p>
+                <p style="margin-top: 8px;" class="lang" data-en="Business Plan for Quality Migrant Admission Scheme Application" data-zh="專才計劃申請商業計劃書">Business Plan for Quality Migrant Admission Scheme Application</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 滾動到頂部按鈕 -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up" style="color: white; font-size: 1.25rem;"></i>
+    </div>
+
+    <script>
+        let currentLang = 'en';
+        
+        function toggleLang() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            document.documentElement.lang = currentLang === 'zh' ? 'zh-TW' : 'en';
+            
+            document.querySelectorAll('.lang').forEach(el => {
+                const text = el.getAttribute(`data-${currentLang}`);
+                if (text) el.textContent = text;
+            });
+            
+            document.getElementById('langBtn').textContent = currentLang === 'en' ? 'Switch to 中文' : 'Switch to English';
+        }
+        
+        // 平滑滾動
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // 滾動到頂部按鈕
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
+        
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // 創建收入增長圖表
+        const ctx = document.getElementById('revenueChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                    datasets: [{
+                        label: 'Revenue ($M)',
+                        data: [17.5, 60, 90, 175, 250],
+                        borderColor: '#00ff9d',
+                        backgroundColor: 'rgba(0, 255, 157, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#fff' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: '#fff' },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        },
+                        x: {
+                            ticks: { color: '#fff' },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        }
+                    }
+                }
+            });
+        }
+        
+        console.log('HKAIIFF Business Plan loaded successfully');
+        console.log('All 13 chapters included with complete content');
+    </script>
+</body>
+</html>
